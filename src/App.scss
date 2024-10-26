@@ -1,83 +1,84 @@
 @import "./styles/colors";
 
 .weather {
+  background-color: $grey-100;
+  padding: 1.5rem;
+  width: 25rem;
+  border-radius: 1rem;
+  .search-bar {
+    padding: 0.65rem 0.65rem 0.65rem 0.65rem;
+    color: $grey-500;
+    background-color: $grey-200;
+    border: 2px solid $grey-300;
+    border-radius: 0.35rem;
+  }
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  .content {
+    color: $grey-700;
     background-color: $grey-100;
-    padding: 1.5rem;
-    width: 25rem;
-    border-radius: 1rem;
-    .search-bar {
-        padding: 0.65rem 0.65rem 0.65rem 0.65rem;
-        color: $grey-500;
-        background-color: $grey-200;
-        border: 2px solid $grey-300;
-        border-radius: 0.35rem;
-    }
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    color: black;
-    .content {
-        color: $grey-700;
+    .presenter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .weather-icon {
         background-color: $grey-100;
-        .presenter {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .weather-icon {
-                background-color: $grey-100;
-                height: 100%;
-                img {
-                    width: 12rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: transparent;
-                }
-            }      
+        height: 100%;
+        img {
+          width: 12rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: transparent;
         }
-        .location-date {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: $grey-100;
-            .display{
-                h2 {
-                    margin-bottom: 0.25rem;
-                    background-color: $grey-100;
-                }
-                .date {
-                    background-color: $grey-100;
-                }
-            }
-            .temp {
-                font-weight: 700;
-                font-size: 2.5rem;
-                padding: 0.7rem;
-                border-radius: 0.75rem;
-                background-color: $grey-200;
-            }
-        }
-        .line {
-            margin-top: 1rem;
-            height: 3px;
-            width: 100%;
-            border-radius: 2rem;
-            background-color: $grey-300;
-        }
-        .data {
-            font-size: 0.85rem;
-            display: flex;
-            margin-top: 1.55rem;
-            justify-content: space-between;
-            background-color: transparent;
-            .specs {
-                background-color: transparent;
-                .description {}
-                p {
-                    margin-bottom: 0.25rem;
-                    background-color: transparent;
-                }
-            }
-        }
+      }
     }
+    .location-date {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $grey-100;
+      .display {
+        h2 {
+          margin-bottom: 0.25rem;
+          background-color: $grey-100;
+        }
+        .date {
+          background-color: $grey-100;
+        }
+      }
+      .temp {
+        font-weight: 700;
+        font-size: 2.5rem;
+        padding: 0.7rem;
+        border-radius: 0.75rem;
+        background-color: $grey-200;
+      }
+    }
+    .line {
+      margin-top: 1rem;
+      height: 3px;
+      width: 100%;
+      border-radius: 2rem;
+      background-color: $grey-300;
+    }
+    .data {
+      font-size: 0.85rem;
+      display: flex;
+      margin-top: 1.55rem;
+      justify-content: space-between;
+      background-color: transparent;
+      .specs {
+        background-color: transparent;
+        .description {
+        }
+        p {
+          margin-bottom: 0.25rem;
+          background-color: transparent;
+        }
+      }
+    }
+  }
 }

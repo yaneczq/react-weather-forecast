@@ -42,7 +42,7 @@ ForecastDisplay.propTypes = {
         main: PropTypes.shape({
           temp_max: PropTypes.number.isRequired,
         }).isRequired,
-      }).isRequired
+      }).isRequired,
     ).isRequired,
   }).isRequired,
 };
