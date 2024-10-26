@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 
 const ForecastDisplay = ({ forecastData }) => {
+
+  // Helper function to format date string
+  const formatDate = (dateString) => {
+    const [year, month, day] = dateString.split("-");
+    return `${month}/${day}/${year.slice(-2)}`; // Format to MM/DD/YY
+  };
   // Helper function to get daily max temperatures
   const getDailyMaxTemps = () => {
     const dailyTemps = {};
@@ -25,7 +31,7 @@ const ForecastDisplay = ({ forecastData }) => {
       <div className="forecast-list">
         {dailyMaxTemps.map(([date, temp], index) => (
           <div key={index} className="forecast-item">
-            <p>{date}</p>
+            <p>{formatDate(date)}</p>
             <p>{temp.toFixed(1)}°C</p>
           </div>
         ))}
