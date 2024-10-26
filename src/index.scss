@@ -1,33 +1,26 @@
 @import "./styles/typography";
-@import "./styles/colors";
 
-@import "./components/ForecastDisplay/ForecastDisplay";
+@import "./styles/colors";
 @import "./components/WeatherIcon/WeatherIcon";
+@import "./components/ForecastDisplay/ForecastDisplay";
 
 * {
   font-family: "Inter", sans-serif;
-
-  h1 {
-    margin: 0;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
-    background-color: transparent;
-    font-size: 1.5rem;
-  }
-  h2 {
-    margin: 0;
-    font-weight: 600;
-    font-size: 1.25rem;
-  }
-  p {
-    margin: 0;
-  }
+}
+body,html {
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  background-color: $grey-700;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  align-items: center;
+h1,h2,p {
+  margin: 0;
+  padding: 0;
 }
+// body {
+//   display: flex;
+//   justify-content: center;
+//   height: 100vh;
+//   align-items: center;
+// }
+
+

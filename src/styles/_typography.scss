@@ -1,51 +1,13 @@
-// Font Sizes
-$font-sizes: (
-  xxs: 11.1px,
-  xs: 13.3,
-  base: 16px,
-  md: 19.2px,
-  lg: 23px,
-  xl: 27.6px,
-);
+// Simple Font Sizes
+$fs_xxs: 11.1px;
+$fs_xs: 13.3px;
+$fs_base: 16px;
+$fs_md: 19.2px;
+$fs_lg: 23px;
+$fs_xl: 27.6px;
 
-// Font Weights
-$font-weights: (
-  regular: 400,
-  semibold: 600,
-  bold: 800,
-);
+// Simple Font Weights
+$fw_400: 400;
+$fw_600: 600;
+$fw_800: 800;
 
-// TypeScale Setup
-$type-scale: (
-  small: (
-    regular: map-get($font-weights, regular),
-    semibold: map-get($font-weights, semibold),
-    bold: map-get($font-weights, bold),
-  ),
-  medium: (
-    regular: map-get($font-weights, regular),
-    semibold: map-get($font-weights, semibold),
-    bold: map-get($font-weights, bold),
-  ),
-  large: (
-    regular: map-get($font-weights, regular),
-    semibold: map-get($font-weights, semibold),
-    bold: map-get($font-weights, bold),
-  ),
-  x-large: (
-    regular: map-get($font-weights, _400),
-    semibold: map-get($font-weights, semibold),
-    bold: map-get($font-weights, bold),
-  ),
-);
-
-@mixin font-type($size, $weight: regular) {
-  @if map-has-key($type-scale, $size) and
-    map-has-key(map-get($type-scale, $size), $weight)
-  {
-    font-size: map-get($font-sizes, $size);
-    font-weight: map-get(map-get($type-scale, $size), $weight);
-  } @else {
-    @error "Invalid size or weight. Please provide a valid size and weight from the $type-scale map.";
-  }
-}

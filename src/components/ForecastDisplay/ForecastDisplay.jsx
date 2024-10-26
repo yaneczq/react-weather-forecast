@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 
 const ForecastDisplay = ({ forecastData }) => {
-
   // Helper function to format date string
   const formatDate = (dateString) => {
     const [year, month, day] = dateString.split("-");
-    return `${month}/${day}/${year.slice(-2)}`; // Format to MM/DD/YY
+    const date = new Date(year, month - 1, day); // Create a Date object
+    const options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
+    return date.toLocaleDateString('en-US', options); // Format to Day, MM/DD/YYYY
   };
+
   // Helper function to get daily max temperatures
   const getDailyMaxTemps = () => {
     const dailyTemps = {};
@@ -27,7 +29,8 @@ const ForecastDisplay = ({ forecastData }) => {
 
   return (
     <div className="forecast-display">
-      <h2>5-Day Forecast</h2>
+      <h2>Weather Forecast</h2>
+      <p>Check the conditions for upcoming days</p>
       <div className="forecast-list">
         {dailyMaxTemps.map(([date, temp], index) => (
           <div key={index} className="forecast-item">

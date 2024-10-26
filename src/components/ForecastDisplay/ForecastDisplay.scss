@@ -1,0 +1,28 @@
+.forecast-display {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-size: $fs_md;
+    font-weight: $fw_600;
+  }
+  p {
+    font-size: $fs_xxs;
+  }
+}
+
+.forecast-list {
+  font-size: $fs_xxs;
+  gap: 8px;
+
+}
+
+.forecast-item {
+  padding: 8px;
+  background-color: $grayscale_200;
+  border-radius: 8px;
+  border: 1px solid $grayscale_400;
+  :nth-child(2) {
+    font-weight: $fw_600;
+    font-size: $fs_base;
+  }
+}

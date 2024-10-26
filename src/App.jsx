@@ -50,7 +50,7 @@ const App = () => {
   }, [city]);
 
   return (
-    <div className="weather">
+    <div className="app">
       <h1>Check your weather!</h1>
       <input
         type="text"
