@@ -15,8 +15,12 @@ const App = () => {
   const fetchWeather = async (city) => {
     try {
       const [weatherResponse, forecastResponse] = await Promise.all([
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`),
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`)
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`,
+        ),
+        fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`,
+        ),
       ]);
 
       if (!weatherResponse.ok || !forecastResponse.ok) {
@@ -26,8 +30,8 @@ const App = () => {
       const weatherData = await weatherResponse.json();
       const forecastData = await forecastResponse.json();
 
-      // console.log(weatherData); 
-      console.log(forecastData);
+      console.log(weatherData); // Log weather data for debugging
+      console.log(forecastData); // Log forecast data for debugging
 
       setWeatherData(weatherData);
       setForecastData(forecastData);
@@ -65,9 +69,14 @@ const App = () => {
       ) : (
         weatherData && (
           <div className="content">
-
             <div className="presenter">
-              <WeatherIcon weatherId={weatherData.weather[0].id} />
+              {/* Pass sunrise, sunset, and timezone to WeatherIcon */}
+              <WeatherIcon
+                weatherId={weatherData.weather[0].id}
+                sunrise={weatherData.sys.sunrise}
+                sunset={weatherData.sys.sunset}
+                timezone={weatherData.timezone}
+              />
             </div>
 
             <div className="location-date">
@@ -82,12 +91,19 @@ const App = () => {
 
             <div className="data">
               <div className="specs">
-                <p className="description">Conditions: <strong>{weatherData.weather[0].description}</strong></p>
+                <p className="description">
+                  Conditions:{" "}
+                  <strong>{weatherData.weather[0].description}</strong>
+                </p>
               </div>
 
               <div className="specs">
-                <p className="humidity">Humidity: <strong>{weatherData.main.humidity}%</strong></p>
-                <p className="wind">Wind speed: <strong>{weatherData.wind.speed} m/s</strong></p>
+                <p className="humidity">
+                  Humidity: <strong>{weatherData.main.humidity}%</strong>
+                </p>
+                <p className="wind">
+                  Wind speed: <strong>{weatherData.wind.speed} m/s</strong>
+                </p>
               </div>
             </div>
 

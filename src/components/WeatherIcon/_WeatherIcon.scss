@@ -1,0 +1,11 @@
+.weather-icon {
+  display: grid;
+  place-items: center;
+  height: 100px;
+  width: 100px;
+}
+
+.weather-icon img {
+  max-width: 100%;
+  max-height: 100%;
+}

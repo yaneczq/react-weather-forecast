@@ -40,7 +40,9 @@ $type-scale: (
 );
 
 @mixin font-type($size, $weight: regular) {
-  @if map-has-key($type-scale, $size) and map-has-key(map-get($type-scale, $size), $weight) {
+  @if map-has-key($type-scale, $size) and
+    map-has-key(map-get($type-scale, $size), $weight)
+  {
     font-size: map-get($font-sizes, $size);
     font-weight: map-get(map-get($type-scale, $size), $weight);
   } @else {
