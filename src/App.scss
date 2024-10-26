@@ -1,7 +1,6 @@
 @import "./styles/colors";
 @import "/src/styles/typography";
 
-
 .app {
   border-radius: 0.75rem;
   position: absolute;
@@ -11,10 +10,10 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   background-color: $grayscale_100;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35); /* Deeper shadow */
+  box-shadow: 0 4px 24px rgba(43, 43, 43, 0.25); /* Deeper shadow */
 }
 
-.search__container{
+.search__container {
   p {
     font-size: $fs_xs;
     margin-bottom: 12px;

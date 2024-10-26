@@ -14,10 +14,10 @@ const App = () => {
     try {
       const [weatherResponse, forecastResponse] = await Promise.all([
         fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`,
         ),
         fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`,
         ),
       ]);
 
@@ -90,10 +90,8 @@ const App = () => {
             </div>
 
             <div className="weather-location">
-              <div className="display">
                 <h2>{weatherData.name}</h2>
                 <p>{formatLocalDate(weatherData.dt, weatherData.timezone)}</p>
-              </div>
               <p className="temp">{weatherData.main.temp}°C</p>
             </div>
           </div>
