@@ -4,7 +4,7 @@ A simple React application that displays current weather information and a 5-day
 
 ![App Screenshot](./public/screenshot.png)
 
-Live Demo [here](https://your-live-demo-link.com).
+Live Demo [here](https://rwf-jk.vercel.app/).
 
 ## Features
 
