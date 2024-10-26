@@ -90,8 +90,8 @@ const App = () => {
             </div>
 
             <div className="weather-location">
-                <h2>{weatherData.name}</h2>
-                <p>{formatLocalDate(weatherData.dt, weatherData.timezone)}</p>
+              <h2>{weatherData.name}</h2>
+              <p>{formatLocalDate(weatherData.dt, weatherData.timezone)}</p>
               <p className="temp">{weatherData.main.temp}°C</p>
             </div>
           </div>

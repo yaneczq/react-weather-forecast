@@ -1,6 +1,6 @@
 # Weather Forecast App
 
-A simple React application that displays current weather information and a 5-day forecast for any city. 
+A simple React application that displays current weather information and a 5-day forecast for any city.
 
 ![App Screenshot](./public/screenshot.png)
 
@@ -22,4 +22,3 @@ Coming soon!
 - **Sass**: For styling components.
 - **ESLint & Prettier**: Code linting and formatting tools for a consistent codebase.
 - **OpenWeather API**: Used to fetch weather and forecast data.
-
