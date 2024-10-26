@@ -1,8 +1,8 @@
 // CustomWeatherIcon.jsx
 import PropTypes from "prop-types";
-import getWeatherImage from "./weatherImages";
+import getWeatherImage  from "./weatherImages";
 
-const CustomWeatherIcon = ({ weatherId }) => {
+const WeatherIcon = ({ weatherId }) => {
   const imageUrl = getWeatherImage(weatherId);
   console.log("Image URL:", imageUrl); // Debugging log
 
@@ -13,8 +13,8 @@ const CustomWeatherIcon = ({ weatherId }) => {
   );
 };
 
-CustomWeatherIcon.propTypes = {
+WeatherIcon.propTypes = {
   weatherId: PropTypes.number.isRequired
 };
 
-export default CustomWeatherIcon;
+export default WeatherIcon;
