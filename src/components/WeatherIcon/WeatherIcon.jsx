@@ -14,33 +14,33 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
 
     const weatherConditions = {
       thunderstorm: {
-        day: "/thunderstorm-day.svg",
-        night: "/thunderstorm-night.svg",
+        day: "/icons/thunderstorm-day.svg",
+        night: "/icons/thunderstorm-night.svg",
       },
       drizzle: {
-        day: "/drizzle-day.svg",
-        night: "/drizzle-night.svg",
+        day: "/icons/drizzle-day.svg",
+        night: "/icons/drizzle-night.svg",
       },
       rain: {
-        day: "/rainy-1-day.svg",
-        night: "/rainy-1-night.svg",
+        day: "/icons/rainy-1-day.svg",
+        night: "/icons/rainy-1-night.svg",
       },
       snow: {
-        day: "/snow-day.svg",
-        night: ".//snow-night-icon.svg",
+        day: "/icons/snow-day.svg",
+        night: "/icons/snow-night-icon.svg",
       },
       clear: {
-        day: "/clear-day.svg",
-        night: "/clear-night.svg",
+        day: "/icons/clear-day.svg",
+        night: "/icons/clear-night.svg",
       },
       clouds: {
-        day: "/cloudy-1-day.svg",
-        night: "/cloudy-1-night.svg",
+        day: "/icons/cloudy-1-day.svg",
+        night: "/icons/cloudy-1-night.svg",
       },
       // Add more conditions as needed
       default: {
-        day: "/default-day.svg",
-        night: "/default-night.svg",
+        day: "/icons/default-day.svg",
+        night: "/icons/default-night.svg",
       },
     };
 
@@ -64,7 +64,7 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
 
   return (
     <div className="weather-icon">
-      <img src={`./public/weather-icons${imageUrl}`} alt={`icon`} />
+      <img src={imageUrl} alt={`Weather icon`} />
     </div>
   );
 };
