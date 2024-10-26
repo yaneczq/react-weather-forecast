@@ -64,7 +64,7 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
 
   return (
     <div className="weather-icon">
-      <img src={`public/weather-icons${imageUrl}`} alt={`icon`} />
+      <img src={`./public/weather-icons${imageUrl}`} alt={`icon`} />
     </div>
   );
 };
