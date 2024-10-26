@@ -1,28 +1,36 @@
 .forecast-display {
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
+  gap: 8px;
   h2 {
     font-size: $fs_md;
     font-weight: $fw_600;
   }
   p {
-    font-size: $fs_xxs;
+    font-size: $fs_xs;
   }
 }
 
 .forecast-list {
   font-size: $fs_xxs;
-  gap: 8px;
+  gap: 12px;
 
 }
 
 .forecast-item {
-  padding: 8px;
-  background-color: $grayscale_200;
-  border-radius: 8px;
-  border: 1px solid $grayscale_400;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  margin-top: 6px;
+  border-radius: 6px;
+  outline: 1px dashed $grayscale_300;
+  outline-offset: -1px;
   :nth-child(2) {
+    margin-top: 4px;
     font-weight: $fw_600;
-    font-size: $fs_base;
+    font-size: $fs_md;
   }
 }

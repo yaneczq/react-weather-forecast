@@ -29,8 +29,6 @@ const ForecastDisplay = ({ forecastData }) => {
 
   return (
     <div className="forecast-display">
-      <h2>Weather Forecast</h2>
-      <p>Check the conditions for upcoming days</p>
       <div className="forecast-list">
         {dailyMaxTemps.map(([date, temp], index) => (
           <div key={index} className="forecast-item">
