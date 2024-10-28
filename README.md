@@ -1,14 +1,6 @@
-# Weather Forecast App
+# Weather Forecast
 
 ![App Screenshot](./public/screenshot.png)
-
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup](#setup)
-- [License](#license)
-
 
 ## About
 
