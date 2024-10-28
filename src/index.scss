@@ -15,14 +15,13 @@ html {
   touch-action: manipulation; // Disables double-tap zoom
   overscroll-behavior: none;
   margin: 0;
+  height: 100%;
   padding: 0;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 12px 0; // Vertical margin for body
 }
-
 h2,
 p {
   margin: 0;
