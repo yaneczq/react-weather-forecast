@@ -13,14 +13,10 @@
 body,
 html {
   touch-action: manipulation; // Disables double-tap zoom
-  overscroll-behavior: none;
+  overscroll-behavior: smooth;
   margin: 0;
-  height: 100%;
   padding: 0;
   background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 h2,
 p {
