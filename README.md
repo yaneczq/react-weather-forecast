@@ -1,5 +1,15 @@
 # Weather Forecast App
 
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup](#setup)
+- [Usage](#usage)
+- [License](#license)
+
+
+## Description
 A React application that provides current weather information and a 5-day forecast for any city. Users can search for a location to view real-time weather conditions.
 The app features a dynamic icon component that changes icons based on the current conditions, offering a visual representation that enhances the user experience.
 
@@ -26,8 +36,19 @@ Live Demo [here](https://rwf-jk.vercel.app/).
 ## Setup
 
 To run this project, install it locally using npm:
+1.Enter project directory
 ```
 $ cd ../lorem
+```
+2. Install packages
+```
 $ npm install
+```
+3. Run the development server locally
+```
 $ npm run dev
 ```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
