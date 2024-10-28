@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import WeatherIcon from "./components/WeatherIcon/WeatherIcon";
 import ForecastDisplay from "./components/ForecastDisplay/ForecastDisplay";
+import WeatherDetails from "./components/WeatherDetails/WeatherDetails";
+
 import "./App.scss";
 
 const App = () => {
@@ -97,8 +99,9 @@ const App = () => {
           </div>
         )
       )}
+      
+      <WeatherDetails weatherData={weatherData} />
 
-      {/* New Forecast Component */}
       {forecastData && <ForecastDisplay forecastData={forecastData} />}
     </div>
   );
