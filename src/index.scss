@@ -2,30 +2,33 @@
 @import "./styles/colors";
 
 @import "./components/WeatherIcon/WeatherIcon";
+@import "./components/WeatherDetails/WeatherDetails";
 @import "./components/ForecastDisplay/ForecastDisplay";
 
+// Global Styles
 * {
   font-family: "Inter", sans-serif;
 }
+
 body,
 html {
-  touch-action: manipulation; /* Disables double-tap zoom */
-  overscroll-behavior: contain;
+  touch-action: manipulation; // Disables double-tap zoom
+  overscroll-behavior: none;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0; // Vertical margin for body
 }
 
-h1,
 h2,
 p {
   margin: 0;
   padding: 0;
 }
 
-// body {
-//   display: flex;
-//   justify-content: center;
-//   height: 100vh;
-//   align-items: center;
-// }
+h1 {
+  font-size: $fs_md;
+}

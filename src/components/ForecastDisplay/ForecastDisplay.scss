@@ -1,12 +1,12 @@
 .forecast-display {
   display: flex;
   flex-direction: column;
-  margin-top: 12px;
-  gap: 8px;
+
   h2 {
     font-size: $fs_md;
     font-weight: $fw_600;
   }
+
   p {
     font-size: $fs_xs;
   }
@@ -15,21 +15,35 @@
 .forecast-list {
   font-size: $fs_xxs;
   gap: 12px;
+
+  @media screen and (min-width: 901px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
 }
 
 .forecast-item {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 12px 8px;
-  margin-top: 6px;
+  margin: 6px 0 0;
   border-radius: 6px;
   outline: 1px dashed $grayscale_300;
   outline-offset: -1px;
+
+  :nth-child(1) {
+    margin-top: 0; // No need for additional margin
+  }
+
   :nth-child(2) {
-    margin-top: 4px;
     font-weight: $fw_600;
     font-size: $fs_md;
+  }
+
+  @media screen and (min-width: 901px) {
+    margin: 0; // Reset margin in larger screens
+    gap: 16px; // Specify gap in larger screens if needed
   }
 }

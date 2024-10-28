@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import WeatherIcon from "./components/WeatherIcon/WeatherIcon";
 import ForecastDisplay from "./components/ForecastDisplay/ForecastDisplay";
 import WeatherDetails from "./components/WeatherDetails/WeatherDetails";
+import { PiThermometerDuotone } from "react-icons/pi";
 
 import "./App.scss";
 
@@ -62,11 +63,12 @@ const App = () => {
   return (
     <div className="app">
       <div className="search__container">
-        <h1>Check the weather</h1>
-        <p>Type name of your city...</p>
+        <div className="app_header">
+          <h1>Check the weather</h1>
+          <p>Type name of your city...</p>
+        </div>
         <input
           type="text"
-          className="search-bar"
           value={city}
           onChange={(e) => setCity(e.target.value)}
           onKeyUp={(e) => {
@@ -75,33 +77,35 @@ const App = () => {
             }
           }}
         />
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          weatherData && (
+            <div className="weather-data">
+              <div className="weather-icon">
+                {/* Pass sunrise, sunset, and timezone to WeatherIcon */}
+                <WeatherIcon
+                  weatherId={weatherData.weather[0].id}
+                  sunrise={weatherData.sys.sunrise}
+                  sunset={weatherData.sys.sunset}
+                  timezone={weatherData.timezone}
+                />
+              </div>
+
+              <div className="weather-location">
+                <h2>{weatherData.name}</h2>
+                <p>{formatLocalDate(weatherData.dt, weatherData.timezone)}</p>
+                <p className="temp">
+                  <PiThermometerDuotone />
+                  {weatherData.main.temp}°C
+                </p>
+              </div>
+            </div>
+          )
+        )}
       </div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        weatherData && (
-          <div className="weather-data">
-            <div className="weather-icon">
-              {/* Pass sunrise, sunset, and timezone to WeatherIcon */}
-              <WeatherIcon
-                weatherId={weatherData.weather[0].id}
-                sunrise={weatherData.sys.sunrise}
-                sunset={weatherData.sys.sunset}
-                timezone={weatherData.timezone}
-              />
-            </div>
 
-            <div className="weather-location">
-              <h2>{weatherData.name}</h2>
-              <p>{formatLocalDate(weatherData.dt, weatherData.timezone)}</p>
-              <p className="temp">{weatherData.main.temp}°C</p>
-            </div>
-          </div>
-        )
-      )}
-      
       <WeatherDetails weatherData={weatherData} />
-
       {forecastData && <ForecastDisplay forecastData={forecastData} />}
     </div>
   );

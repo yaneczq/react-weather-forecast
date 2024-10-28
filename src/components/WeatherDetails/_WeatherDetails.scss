@@ -1,0 +1,29 @@
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; // Space between items
+  justify-content: center;
+}
+
+.detail-item {
+  border: 1px solid $grayscale_400;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: $fs_xs;
+  font-weight: $fw_600;
+}
+
+.detail-item_header,
+p {
+  display: flex;
+  align-items: center;
+  gap: 12px; // Adjusted for both header and paragraph elements
+}
+
+.value {
+  padding: 4px;
+}
