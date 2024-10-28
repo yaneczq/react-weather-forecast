@@ -34,16 +34,15 @@ Live Demo [here](https://rwf-jk.vercel.app/).
 
 ## Setup
 
-To run this project, install it locally using npm:
-1.Enter project directory
+1. Navigate to the project directory:
 ```
 $ cd react-weather-forecast
 ```
-2. Install packages
+2. Install dependencies:
 ```
 $ npm install
 ```
-3. Run the development server locally
+3. Start the development server:
 ```
 $ npm run dev
 ```
