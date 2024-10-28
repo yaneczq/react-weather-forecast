@@ -1,5 +1,7 @@
 # Weather Forecast App
 
+![App Screenshot](./public/screenshot.png)
+
 ## Table of Contents
 
 - [Features](#features)
@@ -8,11 +10,10 @@
 - [License](#license)
 
 
-## Description
+## About
+
 A React application that provides current weather information and a 5-day forecast for any city. Users can search for a location to view real-time weather conditions.
 The app features a dynamic icon component that changes icons based on the current conditions, offering a visual representation that enhances the user experience.
-
-![App Screenshot](./public/screenshot.png)
 
 Live Demo [here](https://rwf-jk.vercel.app/).
 
