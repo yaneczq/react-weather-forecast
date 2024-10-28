@@ -5,7 +5,6 @@
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
-- [Usage](#usage)
 - [License](#license)
 
 
@@ -38,7 +37,7 @@ Live Demo [here](https://rwf-jk.vercel.app/).
 To run this project, install it locally using npm:
 1.Enter project directory
 ```
-$ cd ../lorem
+$ cd react-weather-forecast
 ```
 2. Install packages
 ```
