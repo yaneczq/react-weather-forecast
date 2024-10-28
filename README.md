@@ -1,6 +1,7 @@
 # Weather Forecast App
 
-A simple React application that displays current weather information and a 5-day forecast for any city.
+A React application that provides current weather information and a 5-day forecast for any city. Users can search for a location to view real-time weather conditions.
+The app features a dynamic icon component that changes icons based on the current conditions, offering a visual representation that enhances the user experience.
 
 ![App Screenshot](./public/screenshot.png)
 
@@ -19,4 +20,14 @@ Live Demo [here](https://rwf-jk.vercel.app/).
 - **Vite**: A fast build tool for modern web projects.
 - **Sass**: For styling components.
 - **ESLint & Prettier**: Code linting and formatting tools for a consistent codebase.
+- **React Icons**: A library that includes customizable icons in your project.
 - **OpenWeather API**: Used to fetch weather and forecast data.
+
+## Setup
+
+To run this project, install it locally using npm:
+```
+$ cd ../lorem
+$ npm install
+$ npm run dev
+```
