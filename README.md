@@ -36,18 +36,28 @@ Live Demo [here](https://rwf-jk.vercel.app/).
 
 ## Setup
 
-1. Navigate to the project directory:
-```
-$ cd react-weather-forecast
-```
-2. Install dependencies:
-```
-$ npm install
-```
-3. Start the development server:
-```
-$ npm run dev
-```
+1. **Clone the repository**:
+
+  ```bash
+  git clone https://github.com/yaneczq/react-weather-forecast.git
+  ```
+
+2. Navigate to the project directory:
+   
+  ```
+  $ cd react-weather-forecast
+  ```
+
+3. Install dependencies:
+   
+  ```
+  $ npm install
+  ```
+
+4. Start the development server:
+  ```
+  $ npm run dev
+  ```
 
 ## License
 
