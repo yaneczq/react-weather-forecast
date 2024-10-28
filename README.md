@@ -28,8 +28,9 @@ Live Demo [here](https://rwf-jk.vercel.app/).
 - **React**: Front-end JavaScript library for building the user interface.
 - **Vite**: A fast build tool for modern web projects.
 - **Sass**: For styling components.
+- **PropTypes**: Library for type-checking React component props.
 - **ESLint & Prettier**: Code linting and formatting tools for a consistent codebase.
-- **React Icons**: A library that includes customizable icons in your project.
+- **React Icons**: A library with customizable icons in your project.
 - **OpenWeather API**: Used to fetch weather and forecast data.
 
 ## Setup
