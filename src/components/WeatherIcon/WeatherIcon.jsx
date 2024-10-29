@@ -5,20 +5,20 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
   // Weather conditions mapping
   const weatherConditions = {
     thunderstorm: {
-      day: "/icons/thunderstorm-day.svg",
-      night: "/icons/thunderstorm-night.svg",
+      day: "/icons/isolated-thunderstorms-day.svg",
+      night: "/icons/isolated-thunderstorms-night.svg",
     },
     drizzle: {
-      day: "/icons/drizzle-day.svg",
-      night: "/icons/drizzle-night.svg",
-    },
-    rain: {
       day: "/icons/rainy-1-day.svg",
       night: "/icons/rainy-1-night.svg",
     },
+    rain: {
+      day: "/icons/rainy-2-day.svg",
+      night: "/icons/rainy-2-night.svg",
+    },
     snow: {
       day: "/icons/snowy-2-day.svg",
-      night: "/icons/snowy-2-night.svg",
+      night: "/icons/snowy-1-night.svg",
     },
     clear: {
       day: "/icons/clear-day.svg",
@@ -44,8 +44,8 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
     document.head.insertAdjacentHTML('beforeend', preloadLinks);
   };
 
+  // Preload icons when component mounts
   useEffect(() => {
-    // Preload most common weather icons only once when the component mounts
     preloadWeatherIcons([
       "/icons/thunderstorm-day.svg",
       "/icons/thunderstorm-night.svg",
@@ -60,7 +60,6 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
       "/icons/cloudy-1-day.svg",
       "/icons/cloudy-1-night.svg",
       "/icons/fog.svg",
-      // Add more if necessary
     ]);
   }, []); // Empty dependency array to run once on mount
 
@@ -89,7 +88,22 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
     return weatherConditions.default[timeOfDay]; // Fallback image
   };
 
+  // Get the image URL and preload it
   const imageUrl = getWeatherIcon(weatherId);
+  
+  useEffect(() => {
+    // Preload the LCP image
+    const preloadLCPImage = () => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.href = imageUrl;
+      link.as = 'image';
+      document.head.appendChild(link);
+    };
+
+    preloadLCPImage();
+  }, [imageUrl]); // Run this effect when the imageUrl changes
+
   console.log("Image URL:", imageUrl); // Debugging log
 
   return (
