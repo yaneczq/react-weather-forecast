@@ -63,11 +63,13 @@ const App = () => {
   return (
     <div className="app">
       <div className="search__container">
-        <div className="app_header">
+        <label htmlFor="search-bar">
           <h1>Check the weather</h1>
-          <p>Type name of your city...</p>
-        </div>
+          <p>Type the name of your city...</p>
+        </label>
         <input
+          id="search-bar"
+          name="search-bar"
           type="text"
           value={city}
           onChange={(e) => setCity(e.target.value)}

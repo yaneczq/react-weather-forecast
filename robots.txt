@@ -1,0 +1,4 @@
+# Allow all search engines to index everything except the admin and private folders
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
