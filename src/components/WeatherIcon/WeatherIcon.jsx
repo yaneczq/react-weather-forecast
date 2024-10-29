@@ -2,19 +2,18 @@ import PropTypes from "prop-types";
 import { useEffect } from "react";
 
 const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
-  // Weather conditions mapping
   const weatherConditions = {
     thunderstorm: {
-      day: "/icons/isolated-thunderstorms-day.svg",
-      night: "/icons/isolated-thunderstorms-night.svg",
+      day: "/icons/thunderstorm-day.svg",
+      night: "/icons/thunderstorm-night.svg",
     },
     drizzle: {
-      day: "/icons/rainy-1-day.svg",
-      night: "/icons/rainy-1-night.svg",
+      day: "/icons/drizzle-day.svg",
+      night: "/icons/drizzle-night.svg",
     },
     rain: {
-      day: "/icons/rainy-2-day.svg",
-      night: "/icons/rainy-2-night.svg",
+      day: "/icons/rainy-1-day.svg",
+      night: "/icons/rainy-1-night.svg",
     },
     snow: {
       day: "/icons/snowy-2-day.svg",
@@ -34,45 +33,14 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
     },
   };
 
-  // Preload icons
-  const preloadWeatherIcons = (conditions) => {
-    const preloadLinks = conditions.map(condition => 
-      `<link rel="preload" href="${condition}" as="image">`
-    ).join("\n");
-  
-    // Append the preload links to the head
-    document.head.insertAdjacentHTML('beforeend', preloadLinks);
-  };
+  const getWeatherIcon = () => {
+    const adjustedSunrise = sunrise + timezone;
+    const adjustedSunset = sunset + timezone;
 
-  // Preload icons when component mounts
-  useEffect(() => {
-    preloadWeatherIcons([
-      "/icons/isolated-thunderstorms-day.svg",
-      "/icons/isolated-thunderstorms-night.svg",
-      "/icons/rainy-1-day.svg",
-      "/icons/rainy-1-night.svg",
-      "/icons/rainy-2-day.svg",
-      "/icons/rainy-2-night.svg",
-      "/icons/snowy-1-day.svg",
-      "/icons/snowy-1-night.svg",
-      "/icons/clear-day.svg",
-      "/icons/clear-night.svg",
-      "/icons/cloudy-1-day.svg",
-      "/icons/cloudy-1-night.svg",
-      "/icons/fog.svg",
-    ]);
-  }, []); // Empty dependency array to run once on mount
-
-  // Determine if it's day or night
-  const getWeatherIcon = (weatherId) => {
-    const adjustedSunrise = sunrise + timezone; // Sunrise adjusted to local time
-    const adjustedSunset = sunset + timezone; // Sunset adjusted to local time
-
-    const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
+    const currentTime = Math.floor(Date.now() / 1000);
     const isDayTime = currentTime >= adjustedSunrise && currentTime < adjustedSunset;
     const timeOfDay = isDayTime ? "day" : "night";
 
-    // Return the appropriate weather icon based on the weatherId
     if (weatherId >= 200 && weatherId < 300)
       return weatherConditions.thunderstorm[timeOfDay];
     if (weatherId >= 300 && weatherId < 400)
@@ -85,30 +53,38 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
     if (weatherId >= 801 && weatherId < 900)
       return weatherConditions.clouds[timeOfDay];
 
-    return weatherConditions.default[timeOfDay]; // Fallback image
+    return weatherConditions.default[timeOfDay];
   };
 
-  // Get the image URL and preload it
-  const imageUrl = getWeatherIcon(weatherId);
-  
+  const imageUrl = getWeatherIcon();
+
   useEffect(() => {
-    // Preload the LCP image
-    const preloadLCPImage = () => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.href = imageUrl;
-      link.as = 'image';
-      document.head.appendChild(link);
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.href = imageUrl;
+    link.as = 'image';
+    document.head.appendChild(link);
+    
+    const img = new Image();
+    img.src = imageUrl;
+
+    return () => {
+      document.head.removeChild(link);
     };
+  }, [imageUrl]);
 
-    preloadLCPImage();
-  }, [imageUrl]); // Run this effect when the imageUrl changes
-
-  console.log("Image URL:", imageUrl); // Debugging log
+  // Set explicit width and height for the image
+  const imageWidth = 100; // Set your desired width
+  const imageHeight = 100; // Set your desired height
 
   return (
     <div className="weather-icon">
-      <img src={imageUrl} alt="Weather icon" />
+      <img 
+        src={imageUrl} 
+        alt="Weather icon" 
+        width={imageWidth} 
+        height={imageHeight} 
+      />
     </div>
   );
 };
