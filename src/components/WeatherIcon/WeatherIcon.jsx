@@ -47,12 +47,12 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
   // Preload icons when component mounts
   useEffect(() => {
     preloadWeatherIcons([
-      "/icons/thunderstorm-day.svg",
-      "/icons/thunderstorm-night.svg",
-      "/icons/drizzle-day.svg",
-      "/icons/drizzle-night.svg",
+      "/icons/isolated-thunderstorms-day.svg",
+      "/icons/isolated-thunderstorms-night.svg",
       "/icons/rainy-1-day.svg",
       "/icons/rainy-1-night.svg",
+      "/icons/rainy-2-day.svg",
+      "/icons/rainy-2-night.svg",
       "/icons/snowy-1-day.svg",
       "/icons/snowy-1-night.svg",
       "/icons/clear-day.svg",
