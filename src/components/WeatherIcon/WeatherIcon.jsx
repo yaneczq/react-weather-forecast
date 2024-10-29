@@ -26,8 +26,8 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
         night: "/icons/rainy-1-night.svg",
       },
       snow: {
-        day: "/icons/snow-day.svg",
-        night: "/icons/snow-night-icon.svg",
+        day: "/icons/snowy-2-day.svg",
+        night: "/icons/snowy-2-night.svg",
       },
       clear: {
         day: "/icons/clear-day.svg",
@@ -39,8 +39,8 @@ const WeatherIcon = ({ weatherId, sunrise, sunset, timezone }) => {
       },
       // Add more conditions as needed
       default: {
-        day: "/icons/default-day.svg",
-        night: "/icons/default-night.svg",
+        day: "/icons/fog.svg",
+        night: "/icons/fog.svg",
       },
     };
 
