@@ -1,4 +1,4 @@
-# Weather Forecast App
+# Weather Forecast
 
 React application that displays current weather information and a 5-day forecast with a dynamic icon representing various weather conditions. 
 
