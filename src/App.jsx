@@ -54,7 +54,7 @@ const App = () => {
   return (
     <div className={styles.app}>
       <div className={styles.searchContainer}>
-        <label htmlFor={styles.searchBar}>
+        <label htmlFor="search-bar" className={styles.appHeader}>
           <h1>Check the weather</h1>
           <p>Type the name of your city...</p>
         </label>

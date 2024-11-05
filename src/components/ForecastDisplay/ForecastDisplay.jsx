@@ -8,7 +8,7 @@ const ForecastDisplay = ({ forecastData }) => {
 
   return (
     <div className={styles.forecastDisplay}>
-      <div className="app_header">
+      <div className={styles.appHeader}>
         <h1>Check the Forecast</h1>
         <p>for the upcoming five days in your city...</p>
       </div>

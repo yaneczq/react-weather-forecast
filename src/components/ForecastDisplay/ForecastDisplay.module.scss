@@ -42,3 +42,15 @@
     gap: 16px; // Specify gap in larger screens if needed
   }
 }
+.appHeader {
+  h1 {
+    font-size: $fs_md;
+    margin: 0 0 2px;
+    padding: 0;
+  }
+  p {
+    margin: 0 0 12px;
+    font-size: $fs_xs;
+    padding: 0;
+  }
+}

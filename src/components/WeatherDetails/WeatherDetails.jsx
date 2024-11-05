@@ -17,7 +17,7 @@ const WeatherDetails = ({ weatherData }) => {
 
   return (
     <div className={styles.weatherDetails}>
-      <div className="app_header">
+      <div className={styles.appHeader}>
         <h1>Weather Details</h1>
         <p>Humidity, Pressure, Clouds, Wind Speed & Angle</p>
       </div>
