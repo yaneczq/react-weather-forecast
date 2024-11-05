@@ -1,16 +1,12 @@
 // WeatherDetails.js
 import React from "react";
-import { RiWaterPercentLine } from "react-icons/ri";
-
-import { FaWind } from "react-icons/fa";
-import { GiWindsock, GiWindpump } from "react-icons/gi";
+import { GiWindsock } from "react-icons/gi";
 import {
   PiCloudSunDuotone,
   PiSpeedometerDuotone,
   PiApproximateEqualsDuotone,
   PiWindFill,
 } from "react-icons/pi";
-import { BsSpeedometer2 } from "react-icons/bs";
 
 const WeatherDetails = ({ weatherData }) => {
   // Check if weatherData exists
@@ -28,38 +24,37 @@ const WeatherDetails = ({ weatherData }) => {
       <div className="detail-item">
         <div className="detail-item_header">
           <PiApproximateEqualsDuotone size={24} />
-
           <p>Humidity</p>
         </div>
         <span className="value">{weatherData?.main?.humidity ?? "N/A"}%</span>
       </div>
+
       <div className="detail-item">
         <div className="detail-item_header">
           <PiSpeedometerDuotone size={24} />
-
           <p>Pressure</p>
         </div>
-
         <span className="value">
           {weatherData?.main?.pressure ?? "N/A"} hPa
         </span>
       </div>
+
       <div className="detail-item">
         <div className="detail-item_header">
           <PiCloudSunDuotone size={24} />
-
           <p>Cloudiness</p>
         </div>
         <span className="value">{weatherData?.clouds?.all ?? "N/A"}%</span>
       </div>
+
       <div className="detail-item">
         <div className="detail-item_header">
           <GiWindsock size={24} />
           <p>Wind Speed</p>
         </div>
-
         <span className="value">{weatherData?.wind?.speed ?? "N/A"} m/s</span>
       </div>
+
       <div className="detail-item">
         <div className="detail-item_header">
           <PiWindFill size={24} />
@@ -67,10 +62,6 @@ const WeatherDetails = ({ weatherData }) => {
         </div>
         <span className="value">{weatherData?.wind?.deg ?? "N/A"}°</span>
       </div>
-      {/* <div className="detail-item">
-          <span className="label">Visibility:</span>
-          <span className="value">{weatherData?.visibility != null ? weatherData.visibility / 1000 : "N/A"} km</span>
-          </div> */}
     </div>
   );
 };

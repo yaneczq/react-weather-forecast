@@ -3,12 +3,12 @@ import WeatherIcon from "./components/WeatherIcon/WeatherIcon";
 import ForecastDisplay from "./components/ForecastDisplay/ForecastDisplay";
 import WeatherDetails from "./components/WeatherDetails/WeatherDetails";
 import { PiThermometerDuotone } from "react-icons/pi";
-
 import "./App.scss";
+import { getCurrentDate } from "./components/utils/getCurrentDate";
+const apiKey = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
 
 const App = () => {
-  const apiKey = "6a99ac672d954bcac92a244150fda6a9";
-  const [city, setCity] = useState("Jasło");
+  const [city, setCity] = useState("Kraków");
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -50,16 +50,6 @@ const App = () => {
     fetchWeather(city);
   }, [city]);
 
-  const formatLocalDate = (timestamp, timezone) => {
-    const localTime = new Date((timestamp + timezone) * 1000);
-    return localTime.toLocaleString("en-US", {
-      weekday: "long",
-      hour: "2-digit",
-      minute: "2-digit",
-      timeZoneName: "short",
-    });
-  };
-
   return (
     <div className="app">
       <div className="search__container">
@@ -96,7 +86,7 @@ const App = () => {
 
               <div className="weather-location">
                 <h2>{weatherData.name}</h2>
-                <p>{formatLocalDate(weatherData.dt, weatherData.timezone)}</p>
+                <p>{getCurrentDate(weatherData.dt, weatherData.timezone)}</p>
                 <p className="temp">
                   <PiThermometerDuotone />
                   {weatherData.main.temp}°C
