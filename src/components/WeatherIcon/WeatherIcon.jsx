@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { getWeatherIcon } from "../utils/getWeatherIcon";
+import styles from "./WeatherIcon.module.scss";
 
 const imageWidth = 100;
 const imageHeight = 100;

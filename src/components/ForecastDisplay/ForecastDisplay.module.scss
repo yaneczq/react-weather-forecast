@@ -1,4 +1,6 @@
-.forecast-display {
+@use "../../styles/variables" as *;
+
+.forecastDisplay {
   display: flex;
   flex-direction: column;
 
@@ -6,8 +8,7 @@
     font-size: $fs_xs;
   }
 }
-
-.forecast-list {
+.forecastList {
   font-size: $fs_xxs;
   gap: 12px;
 
@@ -17,8 +18,7 @@
     gap: 8px;
   }
 }
-
-.forecast-item {
+.forecastItem {
   display: flex;
   justify-content: space-between;
   align-items: center;

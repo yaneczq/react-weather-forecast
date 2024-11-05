@@ -3,8 +3,9 @@ import WeatherIcon from "./components/WeatherIcon/WeatherIcon";
 import ForecastDisplay from "./components/ForecastDisplay/ForecastDisplay";
 import WeatherDetails from "./components/WeatherDetails/WeatherDetails";
 import { PiThermometerDuotone } from "react-icons/pi";
-import "./App.scss";
 import { getCurrentDate } from "./components/utils/getCurrentDate";
+import styles from "./App.module.scss";
+
 const apiKey = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
 
 const App = () => {
@@ -51,9 +52,9 @@ const App = () => {
   }, [city]);
 
   return (
-    <div className="app">
-      <div className="search__container">
-        <label htmlFor="search-bar">
+    <div className={styles.app}>
+      <div className={styles.searchContainer}>
+        <label htmlFor={styles.searchBar}>
           <h1>Check the weather</h1>
           <p>Type the name of your city...</p>
         </label>
@@ -73,8 +74,8 @@ const App = () => {
           <div>Loading...</div>
         ) : (
           weatherData && (
-            <div className="weather-data">
-              <div className="weather-icon">
+            <div className={styles.weatherData}>
+              <div className={styles.weatherIcon}>
                 {/* Pass sunrise, sunset, and timezone to WeatherIcon */}
                 <WeatherIcon
                   weatherId={weatherData.weather[0].id}
@@ -84,10 +85,10 @@ const App = () => {
                 />
               </div>
 
-              <div className="weather-location">
+              <div className={styles.weatherLocation}>
                 <h2>{weatherData.name}</h2>
                 <p>{getCurrentDate(weatherData.dt, weatherData.timezone)}</p>
-                <p className="temp">
+                <p className={styles.temp}>
                   <PiThermometerDuotone />
                   {weatherData.main.temp}°C
                 </p>

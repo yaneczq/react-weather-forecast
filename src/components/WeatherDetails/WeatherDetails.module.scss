@@ -1,11 +1,13 @@
-.weather-details {
+@use "../../styles/variables" as *;
+
+.weatherDetails {
   display: flex;
   flex-direction: column;
   gap: 6px; // Space between items
   justify-content: center;
 }
 
-.detail-item {
+.detailsItem {
   border: 1px solid $grayscale_400;
   border-radius: 8px;
   padding: 10px 12px;
@@ -17,13 +19,14 @@
   font-weight: $fw_600;
 }
 
-.detail-item_header,
-p {
+.detailsItemHeader {
   display: flex;
   align-items: center;
+  flex-direction: row;
   gap: 12px; // Adjusted for both header and paragraph elements
-}
-
-.value {
-  padding: 4px;
+  
+  .value {
+    padding: 4px;
+  }
+  
 }

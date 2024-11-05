@@ -1,5 +1,5 @@
-@import "./styles/colors";
-@import "/src/styles/typography";
+@use "./styles/variables" as *;
+
 .app {
   position: relative;
   left: 50%;
@@ -10,22 +10,10 @@
   background-color: $grayscale_100;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 32px;
   border: 1px solid $grayscale_300;
 }
-.app_header {
-  h1 {
-    font-size: $fs_md;
-    margin: 0 0 2px;
-    padding: 0;
-  }
-  p {
-    margin: 0 0 12px;
-    font-size: $fs_xs;
-    padding: 0;
-  }
-}
-.search__container {
+.searchContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,18 +37,22 @@
     box-sizing: border-box;
   }
 }
-.weather-data {
+.weatherData {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
   gap: 48px;
   border-radius: 8px;
   padding: 4px;
+  padding-top: 32px;
 }
-.weather-icon img {
-  width: 300px;
+.weatherIcon {
+  img {
+    width: 125px;
+    height: auto;
+  }
 }
-.weather-location {
+.weatherLocation {
   h2 {
     font-size: $fs_md;
     font-weight: $fw_600;
@@ -80,6 +72,7 @@
     font-size: $fs_xs;
   }
 }
+
 @media screen and (max-width: 901px) {
   .app {
     transform: translateX(0%) translateX(0%);
@@ -93,5 +86,19 @@
   }
   .weather-data {
     justify-content: space-evenly;
+  }
+}
+
+// Is there a better way to style multiple similiar elements?
+.app_header {
+  h1 {
+    font-size: $fs_md;
+    margin: 0 0 2px;
+    padding: 0;
+  }
+  p {
+    margin: 0 0 12px;
+    font-size: $fs_xs;
+    padding: 0;
   }
 }

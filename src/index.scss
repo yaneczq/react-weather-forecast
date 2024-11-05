@@ -1,9 +1,5 @@
-@import "./styles/typography";
-@import "./styles/colors";
+@use "./styles/variables" as *;
 
-@import "./components/WeatherIcon/WeatherIcon";
-@import "./components/WeatherDetails/WeatherDetails";
-@import "./components/ForecastDisplay/ForecastDisplay";
 
 // Global Styles
 * {

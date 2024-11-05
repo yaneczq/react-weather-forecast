@@ -7,6 +7,7 @@ import {
   PiApproximateEqualsDuotone,
   PiWindFill,
 } from "react-icons/pi";
+import styles from "./WeatherDetails.module.scss";
 
 const WeatherDetails = ({ weatherData }) => {
   // Check if weatherData exists
@@ -15,52 +16,52 @@ const WeatherDetails = ({ weatherData }) => {
   }
 
   return (
-    <div className="weather-details">
+    <div className={styles.weatherDetails}>
       <div className="app_header">
         <h1>Weather Details</h1>
         <p>Humidity, Pressure, Clouds, Wind Speed & Angle</p>
       </div>
 
-      <div className="detail-item">
-        <div className="detail-item_header">
+      <div className={styles.detailsItem}>
+        <div className={styles.detailsItemHeader}>
           <PiApproximateEqualsDuotone size={24} />
           <p>Humidity</p>
         </div>
-        <span className="value">{weatherData?.main?.humidity ?? "N/A"}%</span>
+        <span className={styles.value}>{weatherData?.main?.humidity ?? "N/A"}%</span>
       </div>
 
-      <div className="detail-item">
-        <div className="detail-item_header">
+      <div className={styles.detailsItem}>
+        <div className={styles.detailsItemHeader}>
           <PiSpeedometerDuotone size={24} />
           <p>Pressure</p>
         </div>
-        <span className="value">
+        <span className={styles.value}>
           {weatherData?.main?.pressure ?? "N/A"} hPa
         </span>
       </div>
 
-      <div className="detail-item">
-        <div className="detail-item_header">
+      <div className={styles.detailsItem}>
+        <div className={styles.detailsItemHeader}>
           <PiCloudSunDuotone size={24} />
           <p>Cloudiness</p>
         </div>
-        <span className="value">{weatherData?.clouds?.all ?? "N/A"}%</span>
+        <span className={styles.value}>{weatherData?.clouds?.all ?? "N/A"}%</span>
       </div>
 
-      <div className="detail-item">
-        <div className="detail-item_header">
+      <div className={styles.detailsItem}>
+        <div className={styles.detailsItemHeader}>
           <GiWindsock size={24} />
           <p>Wind Speed</p>
         </div>
-        <span className="value">{weatherData?.wind?.speed ?? "N/A"} m/s</span>
+        <span className={styles.value}>{weatherData?.wind?.speed ?? "N/A"} m/s</span>
       </div>
 
-      <div className="detail-item">
-        <div className="detail-item_header">
+      <div className={styles.detailsItem}>
+        <div className={styles.detailsItemHeader}>
           <PiWindFill size={24} />
           <p>Wind Angle</p>
         </div>
-        <span className="value">{weatherData?.wind?.deg ?? "N/A"}°</span>
+        <span className={styles.value}>{weatherData?.wind?.deg ?? "N/A"}°</span>
       </div>
     </div>
   );
