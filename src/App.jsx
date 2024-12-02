@@ -6,10 +6,10 @@ import { PiThermometerDuotone } from "react-icons/pi";
 import { getCurrentDate } from "./components/utils/getCurrentDate";
 import styles from "./App.module.scss";
 
-const apiKey = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
+const apiKey = import.meta.env.VITE_API_KEY;
 
 const App = () => {
-  const [city, setCity] = useState("Kraków");
+  const [city, setCity] = useState("Jasło");
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -76,7 +76,6 @@ const App = () => {
           weatherData && (
             <div className={styles.weatherData}>
               <div className={styles.weatherIcon}>
-                {/* Pass sunrise, sunset, and timezone to WeatherIcon */}
                 <WeatherIcon
                   weatherId={weatherData.weather[0].id}
                   sunrise={weatherData.sys.sunrise}

@@ -1,7 +1,5 @@
 @use "./styles/variables" as *;
 
-
-// Global Styles
 * {
   font-family: "Inter", sans-serif;
 }
@@ -10,7 +8,7 @@
 }
 body,
 html {
-  touch-action: manipulation; // Disables double-tap zoom
+  touch-action: manipulation; 
   overscroll-behavior: smooth;
   margin: 0;
   padding: 0;

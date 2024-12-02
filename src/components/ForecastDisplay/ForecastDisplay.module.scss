@@ -29,7 +29,7 @@
   outline-offset: -1px;
 
   :nth-child(1) {
-    margin-top: 0; // No need for additional margin
+    margin-top: 0; 
   }
 
   :nth-child(2) {
@@ -38,8 +38,8 @@
   }
 
   @media screen and (min-width: 901px) {
-    margin: 0; // Reset margin in larger screens
-    gap: 16px; // Specify gap in larger screens if needed
+    margin: 0; 
+    gap: 16px;
   }
 }
 .appHeader {

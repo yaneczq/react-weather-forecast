@@ -54,7 +54,7 @@ Live Demo [here](https://rwf-jk.vercel.app/).
   - Create a `.env` file in the root of the project.
   - Add your OpenWeather API key to the `.env` file like this:
   ```
-  VITE_OPENWEATHERMAP_API_KEY=your_api_key_here
+  VITE_API_KEY=your_api_key_here
   ```
   - Replace `your_api_key_here` with your actual API key from OpenWeather.
 

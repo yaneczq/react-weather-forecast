@@ -1,4 +1,3 @@
-// WeatherDetails.js
 import React from "react";
 import { GiWindsock } from "react-icons/gi";
 import {
@@ -10,7 +9,7 @@ import {
 import styles from "./WeatherDetails.module.scss";
 
 const WeatherDetails = ({ weatherData }) => {
-  // Check if weatherData exists
+  
   if (!weatherData) {
     return <div>Loading...</div>;
   }

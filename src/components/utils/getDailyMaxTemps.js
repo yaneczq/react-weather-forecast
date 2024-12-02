@@ -10,5 +10,5 @@ export const getDailyMaxTemps = (forecastData) => {
     }
   });
 
-  return Object.entries(dailyTemps).slice(0, 5); // Get first 5 days
+  return Object.entries(dailyTemps).slice(0, 5); 
 };
